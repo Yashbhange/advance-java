@@ -1,0 +1,21 @@
+ import java.util.Hashtable;
+import java.util.Map;
+
+public class HashtableExample {
+    public static void main(String[] args) {
+        
+        Map<Integer, String> hashtable = new Hashtable<>();
+
+        
+        hashtable.put(3, "Mango");
+        hashtable.put(1, "Apple");
+        hashtable.put(2, "Banana");
+        
+
+        
+        System.out.println("Hashtable (thread-safe, no null key or value):");
+        for (Map.Entry<Integer, String> entry : hashtable.entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
+    }
+}
