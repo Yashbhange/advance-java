@@ -1,0 +1,24 @@
+class OddNumberException extends Exception {
+    OddNumberException(String message) {
+        super(message);
+    }
+}
+
+public class OddCheck {
+
+
+    static void checkNumber(int num) throws OddNumberException {
+        if (num % 2 != 0) {
+            throw new OddNumberException("Exception: Odd number not allowed → " + num);
+        }
+        System.out.println("Valid number (Even): " + num);
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkNumber(7); 
+        } catch (OddNumberException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
