@@ -1,0 +1,22 @@
+import java.io.FileWriter;
+import java.util.*;
+
+public class FileWrite{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter file name");
+        String filename=sc.nextLine();
+        System.out.println("enter content");
+        String filecontent=sc.nextLine();
+
+        try(FileWriter obj=new FileWriter(filename)){
+            obj.write(filecontent);
+            System.out.println("writed successfully");
+        }catch(Exception e){
+            System.out.println("exception caught:"+e.getMessage());
+        }
+        finally{
+            sc.close();
+        }
+    }
+}
