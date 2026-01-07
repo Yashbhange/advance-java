@@ -1,0 +1,13 @@
+
+
+public class CustomerExceptionDemo{
+    void checkWeight(int weight) throws 
+WeightLimitException{
+    if (weight > 15){
+        throw new WeightLimitException("no");
+
+    }else {
+        System.out.println("yes");    }
+}
+    
+}
