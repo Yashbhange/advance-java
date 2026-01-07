@@ -1,0 +1,10 @@
+import java.io.FileWriter;
+
+public class CreateFile {
+    public static void main(String[] args) throws Exception {
+        FileWriter fw = new FileWriter("data.txt");
+        fw.write("Hello File Handling");
+        fw.close();
+        System.out.println("File created and data written");
+    }
+}
