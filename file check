@@ -1,0 +1,39 @@
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileCheck {
+   public FileCheck() {
+   }
+
+   public static void main(String[] var0) {
+      String var1 = "sample.txt";
+
+      try {
+         File var2 = new File(var1);
+         if (!var2.exists()) {
+            System.out.println("File does not exist.");
+            return;
+         }
+
+         if (var2.length() == 0L) {
+            throw new EmptyFileException("The file is empty!");
+         }
+
+         FileReader var3 = new FileReader(var2);
+         System.out.println("File content:");
+
+         int var4;
+         while((var4 = var3.read()) != -1) {
+            System.out.print((char)var4);
+         }
+
+         var3.close();
+      } catch (EmptyFileException var5) {
+         System.out.println("Exception: " + var5.getMessage());
+      } catch (IOException var6) {
+         var6.printStackTrace();
+      }
+
+   }
+}
